@@ -1,0 +1,46 @@
+.about-page {
+  padding-bottom: 3rem;
+}
+
+.about-page p {
+  max-width: 700px;
+  margin-top: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-surface-alt);
+  margin-bottom: 0.5rem;
+}
+
+.team-member h4 {
+  margin-bottom: 0.2rem;
+}
+
+.team-member p {
+  margin-top: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .team-grid {
+    justify-content: center;
+  }
+}

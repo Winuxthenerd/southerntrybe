@@ -1,8 +1,8 @@
 function Magazine() {
   return (
-    <main>
+    <div className="page">
       <h1>Magazine</h1>
-    </main>
+    </div>
   );
 }
 

@@ -1,52 +1,134 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
+
+const navItems = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "Meet the Trybe",
+    path: "/about",
+    dropdown: [
+      { label: "About", path: "/about" },
+      { label: "FAQs", path: "/faqs" },
+      { label: "Contact", path: "/contact" },
+    ],
+  },
+  {
+    label: "Southr Magazine",
+    path: "/magazine",
+    dropdown: [
+      { label: "Preview", path: "/magazine?section=preview" },
+      { label: "Full Edition", path: "/magazine?section=full-edition" },
+    ],
+  },
+  {
+    label: "Trybe Sessions",
+    path: "/sessions",
+    dropdown: [
+      { label: "Episodes", path: "/sessions?type=episodes" },
+      { label: "Clips", path: "/sessions?type=clips" },
+    ],
+  },
+  {
+    label: "Trybe Stories",
+    path: "/stories",
+    dropdown: [
+      { label: "Editorial", path: "/stories?type=editorial" },
+      { label: "Pictorial", path: "/stories?type=pictorial" },
+    ],
+  },
+  {
+    label: "Screen Kulture",
+    path: "/screen-kulture",
+    dropdown: [
+      { label: "Top Rated", path: "/screen-kulture?section=top-rated" },
+      { label: "YouTube Picks", path: "/screen-kulture?section=youtube-picks" },
+    ],
+  },
+];
 
 function Navbar() {
-  const [magazineOpen, setMagazineOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const magazineCategories = [
-    { label: "Digital", value: "digital" },
-    { label: "Preview", value: "preview" },
-    { label: "Picture Stories", value: "picture-stories" },
-    { label: "Editorials", value: "editorials" },
-  ];
+  const closeAll = () => {
+    setMobileOpen(false);
+    setOpenDropdown(null);
+  };
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
-    <nav>
-      <div className="nav-brand">
-        <Link to="/">Southerntrybe</Link>
-      </div>
+    <div className="navbar-wrapper">
+      <nav>
+        <div className="nav-brand">
+          <Link to="/" onClick={closeAll}>
+            Southerntrybe
+          </Link>
+        </div>
 
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/faqs">FAQs</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-
-        <li
-          className="nav-dropdown"
-          onMouseEnter={() => setMagazineOpen(true)}
-          onMouseLeave={() => setMagazineOpen(false)}
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
         >
-          <Link to="/magazine">Southr Magazine</Link>
-          {magazineOpen && (
-            <ul className="dropdown-menu">
-              {magazineCategories.map((cat) => (
-                <li key={cat.value}>
-                  <Link to={`/magazine?category=${cat.value}`}>
-                    {cat.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
+          {theme === "dark" ? "☀️" : "🌙"}
+        </button>
 
-        <li><Link to="/sessions">Tyrbe Sessions</Link></li>
-        <li><Link to="/films">Trybe Films</Link></li>
-      </ul>
-    </nav>
+        <button
+          className="nav-toggle"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? "✕" : "☰"}
+        </button>
+
+        <ul className={`nav-links ${mobileOpen ? "open" : ""}`}>
+          <li className="mobile-close">
+            <button onClick={closeAll} aria-label="Close menu">
+              ✕
+            </button>
+          </li>
+
+          {navItems.map((item) => (
+            <li
+              key={item.label}
+              className={item.dropdown ? "nav-dropdown" : ""}
+              onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+              onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
+            >
+              <Link to={item.path} onClick={closeAll}>
+                {item.label}
+              </Link>
+
+              {item.dropdown && openDropdown === item.label && (
+                <div className="dropdown-menu">
+                  <ul className="dropdown-menu-inner">
+                    {item.dropdown.map((sub) => (
+                      <li key={sub.label}>
+                        <Link to={sub.path} onClick={closeAll}>
+                          {sub.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }
 

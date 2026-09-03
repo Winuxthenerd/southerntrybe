@@ -182,3 +182,27 @@
     border-right-color: var(--border);
   }
 }
+
+main {
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.not-found {
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.not-found h1 {
+  font-size: 5rem;
+  color: var(--color-accent);
+}
+
+.not-found a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+

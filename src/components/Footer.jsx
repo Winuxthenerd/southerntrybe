@@ -18,7 +18,8 @@ function Footer() {
             <ul>
               <li><Link to="/magazine">Southr Magazine</Link></li>
               <li><Link to="/sessions">Tyrbe Sessions</Link></li>
-              <li><Link to="/films">Trybe Films</Link></li>
+              <li><Link to="/stories">Trybe Stories</Link></li>
+              <li><Link to="/screen-kulture">Screen Kulture</Link></li>
             </ul>
           </div>
 

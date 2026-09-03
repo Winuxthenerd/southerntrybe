@@ -1,8 +1,8 @@
 function Sessions() {
   return (
-    <main>
+    <div className="page">
       <h1>Sessions</h1>
-    </main>
+    </div>
   );
 }
 
