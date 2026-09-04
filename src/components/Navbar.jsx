@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const navItems = [
-  {
-    label: "Home",
-    path: "/",
-  },
+  { label: "Home", path: "/" },
   {
     label: "Meet the Trybe",
     path: "/about",
@@ -51,7 +48,6 @@ const navItems = [
 ];
 
 function Navbar() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -59,31 +55,22 @@ function Navbar() {
     setMobileOpen(false);
     setOpenDropdown(null);
   };
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  const handleParentClick = (e, item) => {
+    if (item.dropdown) {
+      e.preventDefault();
+      setOpenDropdown(openDropdown === item.label ? null : item.label);
+    } else {
+      closeAll();
+    }
   };
 
   return (
     <div className="navbar-wrapper">
       <nav>
         <div className="nav-brand">
-          <Link to="/" onClick={closeAll}>
-            Southerntrybe
-          </Link>
+          <Link to="/" onClick={closeAll}>Southerntrybe</Link>
         </div>
-
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? "☀️" : "🌙"}
-        </button>
 
         <button
           className="nav-toggle"
@@ -95,19 +82,15 @@ function Navbar() {
 
         <ul className={`nav-links ${mobileOpen ? "open" : ""}`}>
           <li className="mobile-close">
-            <button onClick={closeAll} aria-label="Close menu">
-              ✕
-            </button>
+            <button onClick={closeAll} aria-label="Close menu">✕</button>
           </li>
 
           {navItems.map((item) => (
             <li
               key={item.label}
               className={item.dropdown ? "nav-dropdown" : ""}
-              onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
-              onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
             >
-              <Link to={item.path} onClick={closeAll}>
+              <Link to={item.path} onClick={(e) => handleParentClick(e, item)}>
                 {item.label}
               </Link>
 
@@ -116,9 +99,7 @@ function Navbar() {
                   <ul className="dropdown-menu-inner">
                     {item.dropdown.map((sub) => (
                       <li key={sub.label}>
-                        <Link to={sub.path} onClick={closeAll}>
-                          {sub.label}
-                        </Link>
+                        <Link to={sub.path} onClick={closeAll}>{sub.label}</Link>
                       </li>
                     ))}
                   </ul>

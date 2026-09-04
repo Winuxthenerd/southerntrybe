@@ -1,5 +1,12 @@
 import "./Home.css";
 
+const trybeHeads = [
+  { name: "Name", role: "Editor-in-Chief" },
+  { name: "Name", role: "Creative Director" },
+  { name: "Name", role: "Strategy Advisor" },
+  { name: "Name", role: "Visual Design Director" },
+];
+
 function Home() {
   return (
     <div className="page">
@@ -13,44 +20,26 @@ function Home() {
           <span className="section-label">Latest Issue</span>
           <h2>Issue 001 — Placeholder Title</h2>
           <p>Placeholder teaser description for the featured issue.</p>
-          <a href="/magazine" className="cta-button">Read Now</a>
+          <a href="/magazine?section=preview" className="cta-button">
+            Read Now
+          </a>
         </div>
       </section>
 
-      <section className="section-block">
-        <span className="section-label">Southr Magazine</span>
-        <div className="two-card-grid">
-          <div className="content-card">
-            <div className="card-image-placeholder" />
-            <h3>Preview</h3>
-          </div>
-          <div className="content-card">
-            <div className="card-image-placeholder" />
-            <h3>Full Edition</h3>
-          </div>
-        </div>
+      <section className="section-block ad-section">
+        <div className="ad-placeholder">Advertisement</div>
       </section>
 
       <section className="section-block">
-        <span className="section-label">Trybe Sessions</span>
-        <div className="scroll-row">
-          <div className="thumb-card" />
-          <div className="thumb-card" />
-          <div className="thumb-card" />
-        </div>
-      </section>
-
-      <section className="section-block">
-        <span className="section-label">Screen Kulture</span>
-        <div className="two-card-grid">
-          <div className="content-card">
-            <div className="card-image-placeholder" />
-            <h3>Top Rated</h3>
-          </div>
-          <div className="content-card">
-            <div className="card-image-placeholder" />
-            <h3>YouTube Picks</h3>
-          </div>
+        <span className="section-label">Trybe Heads</span>
+        <div className="heads-grid">
+          {trybeHeads.map((person) => (
+            <div className="head-member" key={person.role}>
+              <div className="head-photo-placeholder" />
+              <h4>{person.name}</h4>
+              <p>{person.role}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

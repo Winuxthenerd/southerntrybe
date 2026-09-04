@@ -10,6 +10,7 @@ import Sessions from "./pages/Sessions";
 import Stories from "./pages/Stories";
 import ScreenKulture from "./pages/ScreenKulture";
 import NotFound from "./pages/NotFound";
+import MagazineView from "./pages/MagazineView";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/magazine" element={<Magazine />} />
+          <Route path="/magazine/view/:id" element={<MagazineView />} />
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/screen-kulture" element={<ScreenKulture />} />
