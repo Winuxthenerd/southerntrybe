@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -11,6 +12,7 @@ import Stories from "./pages/Stories";
 import ScreenKulture from "./pages/ScreenKulture";
 import NotFound from "./pages/NotFound";
 import MagazineView from "./pages/MagazineView";
+import EditorialArticle from "./pages/EditorialArticle";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path="/magazine/view/:id" element={<MagazineView />} />
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/stories" element={<Stories />} />
+          <Route path="/stories/editorial/:id" element={<EditorialArticle />} />
           <Route path="/screen-kulture" element={<ScreenKulture />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
