@@ -22,12 +22,15 @@
   border-top: 1px solid var(--color-border);
 }
 
-.section-label {
+.section-label.centered {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.8rem;
   color: var(--color-accent);
   font-weight: 600;
+  display: block;
+  text-align: center;
+  
 }
 
 .featured-issue {

@@ -13,6 +13,7 @@ import ScreenKulture from "./pages/ScreenKulture";
 import NotFound from "./pages/NotFound";
 import MagazineView from "./pages/MagazineView";
 import EditorialArticle from "./pages/EditorialArticle";
+import PictorialGallery from "./pages/PictorialGallery";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/stories/editorial/:id" element={<EditorialArticle />} />
+          <Route path="/stories/pictorial/:id" element={<PictorialGallery />} />
           <Route path="/screen-kulture" element={<ScreenKulture />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

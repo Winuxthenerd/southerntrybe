@@ -31,7 +31,7 @@ function Home() {
       </section>
 
       <section className="section-block">
-        <span className="section-label">Trybe Heads</span>
+        <span className="section-label centered">Trybe Heads</span>
         <div className="heads-grid">
           {trybeHeads.map((person) => (
             <div className="head-member" key={person.role}>

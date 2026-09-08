@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import Pictorial from "../components/Pictorial";
+import PictorialEvents from "../components/PictorialEvents";
 import EditorialList from "../components/EditorialList";
 import "./Stories.css";
 
@@ -9,7 +9,7 @@ function Stories() {
 
   return (
     <div className="page stories-page">
-      {type === "pictorial" ? <Pictorial /> : <EditorialList />}
+      {type === "pictorial" ? <PictorialEvents /> : <EditorialList />}
     </div>
   );
 }

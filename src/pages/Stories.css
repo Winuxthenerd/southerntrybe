@@ -28,6 +28,20 @@
   cursor: pointer;
 }
 
+.gallery-thumb img,
+.filmstrip-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.viewer-main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -117,4 +131,127 @@
 .editorial-article-body {
   max-width: 700px;
   line-height: 1.7;
+}
+
+/* Folder list */
+.event-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-folder-card {
+  color: var(--color-text);
+}
+
+.event-folder-cover {
+  aspect-ratio: 4/3;
+  background-color: var(--color-surface-alt);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.event-folder-description {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
+
+.gallery-description {
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+  max-width: 600px;
+}
+
+/* Gallery page */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Full-screen image viewer with filmstrip */
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.viewer-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 102;
+}
+
+.viewer-slideshow-toggle {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  z-index: 102;
+}
+
+.viewer-main-image {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+}
+
+.viewer-filmstrip {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem 0;
+}
+
+.filmstrip-thumb {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.filmstrip-thumb.active {
+  border-color: var(--color-accent);
+  opacity: 1;
+}
+
+.filmstrip-thumb:not(.active) {
+  opacity: 0.6;
 }

@@ -1,0 +1,64 @@
+.screen-kulture-page {
+  padding-bottom: 3rem;
+}
+
+.sk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.sk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.video-title {
+  font-size: 1.05rem;
+}
+
+.native-video {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--color-surface-alt);
+}
+
+.video-description {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.video-credit {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.sk-card .cta-button {
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-surface-alt);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-embed.landscape {
+  aspect-ratio: 16/9;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
