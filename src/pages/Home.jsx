@@ -25,9 +25,9 @@ function Home() {
           <span className="section-label">Latest Issue</span>
           <h2>SOUTHR Magazine</h2>
           <p>
-            Welcome to the first edition of SOUTHR Magazine. We`ve been putting
+            Welcome to the first edition of SOUTHR Magazine. We've been putting
             this together with curiosity, feeling and a lot of love for the
-            South. Inside, you`ll meet new faces, discover new perspectives and
+            South. Inside, you'll meet new faces, discover new perspectives and
             stumble into stories we think deserve your attention. This is Issue
             001. Come in.
           </p>

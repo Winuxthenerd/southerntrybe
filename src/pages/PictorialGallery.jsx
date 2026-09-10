@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { events } from "../components/PictorialEvents";
+import { events } from "../data/pictorialEvents";
 import "./Stories.css";
 
 const galleryImages = [

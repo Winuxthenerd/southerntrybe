@@ -44,7 +44,9 @@ function Magazine() {
           <div className="edition-card" key={edition.id}>
             <div className="edition-cover-placeholder" />
             <h3>{edition.title}</h3>
-            <button className="cta-button">Download — Pay to Access</button>
+            <button className="cta-button" disabled title="Coming soon">
+              Download — Pay to Access
+            </button>
           </div>
         ))}
       </div>
