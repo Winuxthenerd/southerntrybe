@@ -1,4 +1,5 @@
 import "./Home.css";
+import issueCover from "../assets/images/magazine/issue-001-cover.jpg";
 
 const trybeHeads = [
   { name: "Name", role: "Editor-in-Chief" },
@@ -15,11 +16,21 @@ function Home() {
       </section>
 
       <section className="featured-issue">
-        <div className="featured-cover-placeholder" />
+        <img
+          src={issueCover}
+          alt="Issue 001 cover"
+          className="featured-cover-placeholder"
+        />
         <div className="featured-info">
           <span className="section-label">Latest Issue</span>
-          <h2>Issue 001 — Placeholder Title</h2>
-          <p>Placeholder teaser description for the featured issue.</p>
+          <h2>SOUTHR Magazine</h2>
+          <p>
+            Welcome to the first edition of SOUTHR Magazine. We`ve been putting
+            this together with curiosity, feeling and a lot of love for the
+            South. Inside, you`ll meet new faces, discover new perspectives and
+            stumble into stories we think deserve your attention. This is Issue
+            001. Come in.
+          </p>
           <a href="/magazine?section=preview" className="cta-button">
             Read Now
           </a>

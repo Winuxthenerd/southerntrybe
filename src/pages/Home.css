@@ -44,8 +44,8 @@
 .featured-cover-placeholder {
   width: 280px;
   height: 380px;
-  background-color: var(--color-surface-alt);
-  border-radius: 8px;
+  object-fit: cover;
+  border-radius: 10px;
   flex-shrink: 0;
 }
 
