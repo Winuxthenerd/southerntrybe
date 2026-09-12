@@ -52,3 +52,61 @@ textarea:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+   *,
+   *::before,
+  *::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+/* ---------- Press feedback (Apple-style instant response) ---------- */
+.cta-button,
+.nav-toggle,
+.mobile-close button,
+.nav-brand a,
+.nav-link,
+button,
+.edition-card,
+.video-card,
+.sk-card,
+.contact-form button {
+  transition: transform 100ms ease-out;
+  will-change: transform;
+}
+
+.cta-button:active,
+.nav-toggle:active,
+.mobile-close button:active,
+.nav-brand a:active,
+.nav-link:active,
+button:active,
+.edition-card:active,
+.video-card:active,
+.sk-card:active,
+.contact-form button:active {
+  transform: scale(0.97);
+}
+
+/* Slightly stronger scale for the pure icon buttons */
+.nav-toggle:active,
+.mobile-close button:active {
+  transform: scale(0.92);
+}
+
+/*Optional polish apparently*/
+.edition-card,
+.video-card,
+.sk-card {
+  transition: transform 100ms ease-out, box-shadow 150ms ease;
+}
+
+.edition-card:active,
+.video-card:active,
+.sk-card:active {
+  transform: scale(0.985);
+}

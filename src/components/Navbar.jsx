@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -51,6 +51,18 @@ function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Close everything on route change or escape
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   const closeAll = () => {
     setMobileOpen(false);
     setOpenDropdown(null);
@@ -65,41 +77,70 @@ function Navbar() {
     }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!openDropdown) return;
+    const handleOutside = (e) => {
+      if (!e.target.closest(".nav-dropdown")) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("pointerdown", handleOutside);
+    return () => document.removeEventListener("pointerdown", handleOutside);
+  }, [openDropdown]);
+
   return (
     <div className="navbar-wrapper">
       <nav>
         <div className="nav-brand">
-          <Link to="/" onClick={closeAll}>Southerntrybe</Link>
+          <Link to="/" onClick={closeAll}>
+            Southerntrybe
+          </Link>
         </div>
 
         <button
           className="nav-toggle"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? "✕" : "☰"}
         </button>
 
         <ul className={`nav-links ${mobileOpen ? "open" : ""}`}>
           <li className="mobile-close">
-            <button onClick={closeAll} aria-label="Close menu">✕</button>
+            <button onClick={closeAll} aria-label="Close menu">
+              ✕
+            </button>
           </li>
 
           {navItems.map((item) => (
             <li
               key={item.label}
-              className={item.dropdown ? "nav-dropdown" : ""}
+              className={`nav-item ${item.dropdown ? "nav-dropdown" : ""} ${
+                openDropdown === item.label ? "dropdown-open" : ""
+              }`}
             >
-              <Link to={item.path} onClick={(e) => handleParentClick(e, item)}>
+              <Link
+                to={item.path}
+                onClick={(e) => handleParentClick(e, item)}
+                className="nav-link"
+              >
                 {item.label}
               </Link>
 
-              {item.dropdown && openDropdown === item.label && (
-                <div className="dropdown-menu">
+              {item.dropdown && (
+                <div
+                  className={`dropdown-menu ${
+                    openDropdown === item.label ? "is-open" : ""
+                  }`}
+                >
                   <ul className="dropdown-menu-inner">
                     {item.dropdown.map((sub) => (
                       <li key={sub.label}>
-                        <Link to={sub.path} onClick={closeAll}>{sub.label}</Link>
+                        <Link to={sub.path} onClick={closeAll}>
+                          {sub.label}
+                        </Link>
                       </li>
                     ))}
                   </ul>

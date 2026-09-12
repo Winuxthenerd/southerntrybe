@@ -180,7 +180,97 @@ const topRated = [
 ];
 
 const youtubePicks = [
-  { id: 1, videoId: "dQw4w9WgXcQ", credit: "Original video by Author Name" },
+  { 
+    id: 1, 
+    title: "Meet My Husbands",
+    videoId: "Uik8wBXsTxA", 
+    credit: "Starring: Nosa Rex" 
+  },
+  {
+    id: 2, 
+    title: "Saint and Sinner",
+    videoId: "ey0DGUso9EE", 
+    credit: "Starring: Nosa Rex",
+  },
+  {
+    id: 3, 
+    title: "The Merger",
+    videoId: "Vzg7hNXk7lo",
+    credit: "Starring: Timini Egbuson",
+  },
+  {
+    id: 4, 
+    title: "Before Midnight",
+    videoId: "VlirTgTdLmk",
+    credit: "Starring: Efe Irele, Timini Egbuson",
+  },
+  {
+    id: 5, 
+    title: "Destined Odds",
+    videoId: "fgV5Kx2dOKU",
+    credit: "Starring: Micheal Dappa",
+  },
+  {
+    id: 6, 
+    title: "Friendly Foe",
+    videoId: "geFPwpOZo_A",
+    credit: "Starring: Daniel Etim Effiong",
+  },
+  {
+    id: 7, 
+    title: "Mr and Mrs Cletus",
+    videoId: "HX_xh7mWt78",
+    credit: "Starring: Etinosa Idemudia, Nosa Rex",
+  },
+  {
+    id: 8, 
+    title: "Triangle of Love",
+    videoId: "GTNBB7vFl9g",
+    credit: "Starring: Micheal Dappa",
+  },
+  {
+    id: 9, 
+    title: "Nenye the Giver",
+    videoId: "VmhVEoUfHkI",
+    credit: "Starring: Nosa Rex",
+  },
+  {
+    id: 10, 
+    title: "Bitter Sweet",
+    videoId: "UwXzT0LY4Wg",
+    credit: "Starring: Efe Irele",
+  },
+  {
+    id: 11,
+    title: "Blue Honeymoon",
+    videoId: "vyjUKJdpjJA",
+    credit: "Starring: Bobby Ekpe",
+  },
+  {
+    id: 12, 
+    title: "Love in Full Colors",
+    videoId: "3YIlmOqwCZs",
+    credit: "Starring: Timini Egbuson",
+  },
+  {
+    id: 13, 
+    title: "Beauty of Us",
+    videoId: "Mx3u0iW7h9Y",
+    credit: "Starring: Daniel Etim Effiong",
+  },
+  {
+    id: 14, 
+    title: "Father and Son Trouble",
+    videoId: "FrEfarzHGfE",
+    credit: "Starring: Charles Inojie, Nosa Rex",
+  },
+  {
+    id: 15, 
+    title: "Love in Overdrive",
+    videoId: "xNZLTdz77aM",
+    credit: "Starring: Nancy Isime, John Ekanem",
+  },
+  //Start from My Pride Her Destiny, remaining 10 more, I am so tired
 ];
 
 function ScreenKulture() {
@@ -194,12 +284,15 @@ function ScreenKulture() {
         <div className="sk-grid">
           {youtubePicks.map((item) => (
             <div className="sk-card" key={item.id}>
+              <h3 className="video-title">{item.title}</h3>
               <div className="video-embed landscape">
                 <iframe
                   src={`https://www.youtube.com/embed/${item.videoId}`}
-                  title={item.credit}
+                  title={item.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
                 />
               </div>
               <p className="video-credit">{item.credit}</p>
@@ -219,7 +312,7 @@ function ScreenKulture() {
             <h3 className="video-title">{item.title}</h3>
             <div className="video-embed landscape">
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${item.trailerSrc}`}
+                src={`https://www.youtube.com/embed/${item.trailerSrc}`}
                 title={item.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

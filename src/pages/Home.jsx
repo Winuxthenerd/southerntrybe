@@ -23,8 +23,8 @@ function Home() {
         />
         <div className="featured-info">
           <span className="section-label">Latest Issue</span>
-          <h2>SOUTHR Magazine</h2>
-          <p>
+          <h2 className="featured-title">SOUTHR Magazine</h2>
+          <p className="featured-description">
             Welcome to the first edition of SOUTHR Magazine. We've been putting
             this together with curiosity, feeling and a lot of love for the
             South. Inside, you'll meet new faces, discover new perspectives and

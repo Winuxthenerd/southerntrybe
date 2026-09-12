@@ -11,10 +11,11 @@
   font-family: "Playfair Display", "Times New Roman", serif;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: -0.025em;
   font-size: clamp(2.5rem, 8vw, 6rem);
   color: var(--color-text);
-  line-height: 1.1;
+  line-height: 1.05;
+  font-optical-sizing: auto;
 }
 
 .section-block {
@@ -31,6 +32,18 @@
   display: block;
   text-align: center;
   
+}
+
+.featured-description {
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.featured-title {
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
 }
 
 .featured-issue {

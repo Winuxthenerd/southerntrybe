@@ -24,8 +24,14 @@ nav {
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0.5px;
+  transition: transform 100ms ease-out;
 }
 
+.nav-brand a:active {
+  transform: scale(0.97);
+}
+
+/* Desktop links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -35,13 +41,18 @@ nav {
   list-style: none;
 }
 
-.nav-links > li > a {
+.nav-link {
   position: relative;
   font-size: 0.95rem;
   padding: 0.25rem 0;
+  transition: color 0.15s ease, transform 100ms ease-out;
 }
 
-.nav-links > li > a::after {
+.nav-link:active {
+  transform: scale(0.97);
+}
+
+.nav-link::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -52,10 +63,11 @@ nav {
   transition: width 0.2s ease;
 }
 
-.nav-links > li > a:hover::after {
+.nav-link:hover::after {
   width: 100%;
 }
 
+/* Dropdown container – always in DOM so exit can animate */
 .nav-dropdown {
   position: relative;
 }
@@ -67,6 +79,21 @@ nav {
   padding-top: 0.75rem;
   min-width: 180px;
   list-style: none;
+  /* start hidden */
+  opacity: 0;
+  transform: scale(0.96) translateY(-4px);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    opacity 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.dropdown-menu.is-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
 }
 
 .dropdown-menu-inner {
@@ -74,19 +101,25 @@ nav {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 0.5rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
+  transition: background-color 0.15s ease, transform 100ms ease-out;
 }
 
 .dropdown-menu li a:hover {
   background-color: var(--color-bg);
 }
 
-/* Hamburger icon (mobile only) */
+.dropdown-menu li a:active {
+  transform: scale(0.97);
+}
+
+/* Hamburger */
 .nav-toggle {
   display: none;
   background: none;
@@ -94,63 +127,122 @@ nav {
   color: var(--color-text);
   font-size: 1.5rem;
   cursor: pointer;
+  transition: transform 100ms ease-out;
+}
+
+.nav-toggle:active {
+  transform: scale(0.92);
 }
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-bg);
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    z-index: 40;
+    opacity: 0;
+    transform: scale(0.98) translateY(8px);
+    pointer-events: none;
+    transition:
+      opacity 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
   }
 
   .nav-toggle {
     display: block;
   }
 
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-bg);
-    padding: 6rem 2rem 2rem;
-    gap: 1.5rem;
-    z-index: 40;
+  /* Parent links on mobile */
+  .nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
   }
 
+  /* Dropdowns start closed on mobile too */
   .dropdown-menu {
     position: static;
-    margin-top: 0.5rem;
-    border: none;
-    background: none;
-    padding-left: 1rem;
+    margin-top: 0.35rem;
+    padding-top: 0;
+    min-width: auto;
+    list-style: none;
+
+    /* start hidden */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition:
+      opacity 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      max-height 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    list-style: none;  
   }
-}
-.mobile-close {
+
+  .dropdown-menu.is-open {
+    opacity: 1;
+    max-height: 200px; /* enough for a few items */
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .dropdown-menu-inner {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dropdown-menu li {
+    list-style: none;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 0.4rem 0;
+    font-size: 1.05rem;
+    opacity: 0.8;
+    color: var(--color-text-muted);
+  }
+
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a:active {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .mobile-close {
     display: block;
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
   }
-.mobile-close button {
+
+  .mobile-close button {
     background: none;
     border: none;
     color: var(--color-text);
     font-size: 1.75rem;
     cursor: pointer;
-  }  
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 0.35rem 0.6rem;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 1rem;
+    transition: transform 100ms ease-out;
+  }
+
+  .mobile-close button:active {
+    transform: scale(0.9);
+  }
 }
-
-
