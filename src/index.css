@@ -71,6 +71,7 @@ textarea:focus-visible {
 .nav-brand a,
 .nav-link,
 button,
+editorial-card,
 .edition-card,
 .video-card,
 .sk-card,
@@ -85,6 +86,7 @@ button,
 .nav-brand a:active,
 .nav-link:active,
 button:active,
+editorial-card:active,
 .edition-card:active,
 .video-card:active,
 .sk-card:active,
@@ -100,12 +102,16 @@ button:active,
 
 /*Optional polish apparently*/
 .edition-card,
+.editorial-card,
 .video-card,
 .sk-card {
   transition: transform 100ms ease-out, box-shadow 150ms ease;
+  will-change: transform;
+  cursor: pointer;
 }
 
 .edition-card:active,
+.editorial-card:active,
 .video-card:active,
 .sk-card:active {
   transform: scale(0.985);

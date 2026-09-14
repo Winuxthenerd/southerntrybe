@@ -10,6 +10,7 @@ import Magazine from "./pages/Magazine";
 import Sessions from "./pages/Sessions";
 import Stories from "./pages/Stories";
 import ScreenKulture from "./pages/ScreenKulture";
+import YoutubeWatch from "./pages/YoutubeWatch";
 import NotFound from "./pages/NotFound";
 import MagazineView from "./pages/MagazineView";
 import EditorialArticle from "./pages/EditorialArticle";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/stories/editorial/:id" element={<EditorialArticle />} />
           <Route path="/stories/pictorial/:id" element={<PictorialGallery />} />
           <Route path="/screen-kulture" element={<ScreenKulture />} />
+          <Route path="/screen-kulture/watch/:id" element={<YoutubeWatch />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
