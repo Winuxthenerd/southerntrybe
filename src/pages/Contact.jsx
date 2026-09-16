@@ -25,7 +25,7 @@ const socialLinks = [
 
 function Contact() {
   return (
-    <div className="page contact-page">
+    <div className="page contact-page watermark-page">
       <h1>Let's Connect</h1>
 
       <div className="contact-copy">

@@ -2,7 +2,7 @@ import "./About.css";
 
 function About() {
   return (
-    <div className="page about-page">
+    <div className="page about-page watermark-page">
       <h1>About Southerntrybe</h1>
       <p>
         SOUTHERNTRYBE is an art inclined media firm dedicated to celebrating

@@ -110,7 +110,7 @@ function Navbar() {
         <ul className={`nav-links ${mobileOpen ? "open" : ""}`}>
           <li className="mobile-close">
             <button onClick={closeAll} aria-label="Close menu">
-              ✕
+              
             </button>
           </li>
 

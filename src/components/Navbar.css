@@ -239,6 +239,7 @@ nav {
     color: var(--color-text);
     font-size: 1.75rem;
     cursor: pointer;
+    opacity: 0.08;
     transition: transform 100ms ease-out;
   }
 

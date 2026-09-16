@@ -390,6 +390,7 @@ function YoutubeThumbCard({ item }) {
       </div>
       <h4 className="yt-thumb-title">{item.title}</h4>
       <p className="yt-thumb-credit">{item.credit}</p>
+      
     </Link>
   );
 }

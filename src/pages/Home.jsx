@@ -10,8 +10,8 @@ const trybeHeads = [
 
 function Home() {
   return (
-    <div className="page">
-      <section className="hero">
+    <div className="page ">
+      <section className="hero watermark-page">
         <h1 className="hero-title">Southerntrybe</h1>
       </section>
 
