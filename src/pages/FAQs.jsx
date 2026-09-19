@@ -80,7 +80,7 @@ function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="page faqs-page watermark-page">
+    <div className="page faqs-page">
       <h1>FAQs</h1>
       <div className="faq-list">
         {faqs.map((item, i) => {

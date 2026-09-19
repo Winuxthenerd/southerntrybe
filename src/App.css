@@ -20,24 +20,3 @@ main {
   color: var(--color-accent);
   text-decoration: underline;
 }
-.watermark-page {
-  position: relative;
-  overflow: hidden;
-}
-
-.watermark-page::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background-image: url("/favicon.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  transform: translate(-50%, -50%);
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: -1;
-}
