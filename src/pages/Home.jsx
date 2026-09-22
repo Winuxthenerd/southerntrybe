@@ -1,4 +1,5 @@
 import "./Home.css";
+import VideoAd from "../components/VideoAd";
 import issueCover from "../assets/images/magazine/issue-001-cover.jpg";
 
 const trybeHeads = [
@@ -38,7 +39,7 @@ function Home() {
       </section>
 
       <section className="section-block ad-section">
-        <div className="ad-placeholder">Advertisement</div>
+        <VideoAd />
       </section>
 
       <section className="section-block">
