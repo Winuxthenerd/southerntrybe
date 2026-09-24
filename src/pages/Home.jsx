@@ -1,13 +1,36 @@
 import "./Home.css";
+import { useState } from "react";
 import VideoAd from "../components/VideoAd";
 import issueCover from "../assets/images/magazine/issue-001-cover.jpg";
 
 const trybeHeads = [
-  { name: "Name", role: "Editor-in-Chief" },
-  { name: "Name", role: "Creative Director" },
-  { name: "Name", role: "Strategy Advisor" },
-  { name: "Name", role: "Visual Design Director" },
+  { name: "Mr. Phillip Timi Rex", role: "Editor-in-Chief", paragraph:`A Bayelsa-Born Theatre Arts graduate of the prestigious Niger Delta University, with a passion for all things creative. With a flair for Children’s Theatre, Production Management, and Production Design he is driven by a desire to tell and amplify the creative and artistic stories of Southern emerging creatives to a wider audience.
+
+And yes! he’s crazily in love with CARTOONS!` },
+  { name: "Mr. Rowlands Tamunotonye Winston", role: "Creative Director", paragraph:"No Bio yet, Just happy to be here" },
 ];
+
+function Bio({ text }) {
+  const [expanded, setExpanded] = useState(false);
+  const limit = 150;
+
+  const isLong = text.length > limit;
+
+  return (
+    <p className="head-bio">
+      {expanded || !isLong ? text : text.slice(0, limit) + "... "}
+
+      {isLong && (
+        <button
+          className="read-more"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "Read Less" : "Read More"}
+        </button>
+      )}
+    </p>
+  );
+}
 
 function Home() {
   return (
@@ -50,6 +73,7 @@ function Home() {
               <div className="head-photo-placeholder" />
               <h4>{person.name}</h4>
               <p>{person.role}</p>
+              <Bio text={person.paragraph} />
             </div>
           ))}
         </div>
