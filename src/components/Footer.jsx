@@ -35,9 +35,9 @@ function Footer() {
           <div className="footer-column">
             <h4>Follow</h4>
             <ul>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+              <li><a href="https://www.instagram.com/official_southerntrybe?stkn=MWFobDh2M21uZ2Z2cA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://tiktok.com/@thesoutherntrybe" target="_blank" rel="noopener noreferrer">Tiktok</a></li>
+              <li><a href="mailto:youremail@gmail.com" target="_blank" rel="noopener noreferrer">Gmail</a></li>
             </ul>
           </div>
         </div>

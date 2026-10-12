@@ -2,6 +2,14 @@
   padding-bottom: 3rem;
 }
 
+.top-rated-note {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
 .sk-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -102,6 +110,7 @@
   height: 100%;
   object-fit: cover;
   border: none;
+  pointer-events: none;
 }
 
 .yt-play-icon {

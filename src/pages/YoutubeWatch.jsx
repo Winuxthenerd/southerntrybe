@@ -29,7 +29,8 @@ function YoutubeWatch() {
             loading="lazy"
           />
         </div>
-        <h1>{current.title}</h1>
+        <br></br>
+        <h2>{current.title}</h2>
         <p className="video-credit">{current.credit}</p>
       </div>
 

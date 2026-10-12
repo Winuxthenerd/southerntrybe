@@ -9,13 +9,13 @@ function MagazineView() {
   return (
     <div className="page magazine-page">
       <h1>Issue {id} — Preview</h1>
-      <div className="preview-scroll">
-        {previewPages.map((page) => (
-          <div className="preview-page-placeholder" key={page}>
-            Page {page}
-          </div>
-        ))}
-      </div>
+
+      <iframe
+        src={`${import.meta.env.BASE_URL}previews/issue-1/index.html`}
+        title={`Issue ${id} preview`}
+        className="magazine-frame"
+      />
+
       <Link to="/magazine?section=full-edition" className="cta-button">
         View Full Edition
       </Link>

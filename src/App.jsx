@@ -15,10 +15,13 @@ import NotFound from "./pages/NotFound";
 import MagazineView from "./pages/MagazineView";
 import EditorialArticle from "./pages/EditorialArticle";
 import PictorialGallery from "./pages/PictorialGallery";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
     <BrowserRouter basename="/southerntrybe">
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
@@ -38,6 +41,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <BackToTop />
     </BrowserRouter>
   );
 }

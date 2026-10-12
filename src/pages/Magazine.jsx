@@ -1,10 +1,11 @@
 import { useSearchParams, Link } from "react-router-dom";
+import issue1Cover from "../assets/images/magazine/issue-001-cover.jpg";
 import "./Magazine.css";
 
 const previewIssues = [
-  { id: 1, title: "Issue 001 — Placeholder" },
-  { id: 2, title: "Issue 002 — Placeholder" },
-  { id: 3, title: "Issue 003 — Placeholder" },
+  { id: 1, title: "SOUTHR MAGAZINE FLIPBOOK", cover: issue1Cover },
+  { id: 2, title: "Issue 002 — Placeholder", cover: null },
+  { id: 3, title: "Issue 003 — Placeholder", cover: null },
 ];
 
 const editions = [
@@ -24,7 +25,11 @@ function Magazine() {
         <div className="edition-grid">
           {previewIssues.map((issue) => (
             <div className="edition-card" key={issue.id}>
-              <div className="edition-cover-placeholder" />
+              {issue.cover ? (
+                <img src={issue.cover} alt={issue.title} className="edition-cover" />
+              ) : (
+                <div className="edition-cover-placeholder" />
+              )}
               <h3>{issue.title}</h3>
               <Link to={`/magazine/view/${issue.id}`} className="cta-button">
                 Preview

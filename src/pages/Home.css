@@ -82,6 +82,11 @@
   font-weight: 600;
 }
 
+.cta-button:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-bg);
+}
+
 .two-card-grid {
   display: flex;
   gap: 1.5rem;

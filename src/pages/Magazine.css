@@ -53,3 +53,21 @@
   cursor: pointer;
   font-family: inherit;
 }
+
+.magazine-frame {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.edition-cover {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  display: block;
+  
+}

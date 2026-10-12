@@ -216,12 +216,7 @@ export const youtubePicks = [
     videoId: "Uik8wBXsTxA",
     credit: "Starring: Nosa Rex",
   },
-  {
-    id: 2,
-    title: "Saint and Sinner",
-    videoId: "ey0DGUso9EE",
-    credit: "Starring: Nosa Rex",
-  },
+  //id: 2 deleted because the link was broken.
   {
     id: 3,
     title: "The Merger",
@@ -334,13 +329,13 @@ export const youtubePicks = [
   {
     id: 21,
     title: "Edges and Exes",
-    videoId: "VFdUKcpP3vU",
+    videoId: "eIG-nyZerT8",
     credit: "Starring: Sophia Alakija",
   },
   {
     id: 22,
     title: "A Random Tuesday",
-    videoId: "VFdUKcpP3vU",
+    videoId: "NT74shGnu24",
     credit: "Starring: Sarian Martin, Nosa Rex",
   },
   {
@@ -415,6 +410,7 @@ function ScreenKulture() {
   return (
     <div className="page screen-kulture-page">
       <h1>Top Rated</h1>
+      <p className="top-rated-note">Note: Southerntrybe uses third party for it's download links, clicking download will redirect you to the external source.</p>
       <div className="sk-grid">
         {topRated.map((item) => (
           <div className="sk-card" key={item.id}>
@@ -434,8 +430,7 @@ function ScreenKulture() {
             </a>
             <p className="video-description">{item.description}</p>
             <p className="video-description">
-              Note: Southerntrybe uses third party for it's download links,
-              clicking download will redirect you to the external source.
+
             </p>
           </div>
         ))}
