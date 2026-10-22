@@ -1,0 +1,64 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://winuxthenerd.github.io/southerntrybe/</loc>
+  </url>
+
+  <url>
+    <loc>https://winuxthenerd.github.io/southerntrybe/about</loc>
+  </url>
+
+  <url>
+    <loc>https://winuxthenerd.github.io/southerntrybe/faqs</loc>
+  </url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/contact</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/magazine</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/magazine/view/:id</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/sessions</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/stories</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/stories/editorial/:id</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/stories/pictorial/:id</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/screen-kulture</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/screen-kulture/watch/:id</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/privacy-policy</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/terms-of-use</loc>
+  <url>
+
+  <url>
+    <loc>https://winuxthenerd.githun.io/southerntrybe/*</loc>
+  <url>
+</urlset>
