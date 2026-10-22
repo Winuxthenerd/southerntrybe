@@ -1,0 +1,64 @@
+
+.terms-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+}
+
+.terms-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.terms-header h1 {
+  margin: 0 0 8px;
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+.terms-header p {
+  margin: 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.terms-page section {
+  margin-bottom: 32px;
+}
+
+.terms-page h2 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.terms-page p {
+  margin: 0 0 12px;
+}
+
+.terms-page ul {
+  padding-left: 24px;
+  margin: 12px 0;
+}
+
+.terms-page li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .terms-page {
+    padding: 28px 18px 48px;
+  }
+
+  .terms-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .terms-page h2 {
+    font-size: 1.15rem;
+  }
+}

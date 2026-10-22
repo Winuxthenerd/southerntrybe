@@ -54,6 +54,59 @@ function Contact() {
         <p className="contact-tagline">Stay talking with the Trybe.</p>
       </div>
 
+      
+      <div className="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <p>
+          Have an idea, collaboration proposal, or just want
+          to say hello? Drop us a message.
+        </p>
+
+        <form
+          action="https://formspree.io/f/mwlleapw"
+          method="POST"
+          className="contact-form"
+        >
+          <div className="form-group">
+            <label htmlFor="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Write your message here..."
+              required
+            />
+          </div>
+
+          <button type="submit" className="contact-submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+
       <div className="contact-social">
         <h3>Follow us on our social platforms and get talking</h3>
         <div className="social-icons">

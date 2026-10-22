@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://winuxthenerd.github.io/southerntrybe/sitemap.xml
